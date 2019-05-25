@@ -17,6 +17,7 @@ So even though this Template should work for many applications, my use case is t
 ## Hardware Overview
 
 ![image](https://images-na.ssl-images-amazon.com/images/I/7115Yl4jXQL._SL1001_.jpg)
+https://www.amazon.com/gp/product/B072M57XQ2/
 
 The 28BYJ-48 ULN2003 stepper motor/driver combo is one of the cheapest you can find. And because of that it's a popular choice 
 (readily available).
