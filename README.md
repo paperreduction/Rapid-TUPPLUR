@@ -31,8 +31,8 @@ The ULN2003 needs *four output pins* to control the stepping plus GND and 5-12 V
 16 GPIO pins availabele on a header. So keep that in mind if you're wanting to use something like a Sonoff. I chose to use a NodeMCU 
 like Martin to have easy access to the GPIO pins.
 
-The 28BYJ-48 ULN2003 has 200 steps per revolution and that value is baked into the firmware. If you're using this for a different stepper
-motor driver you'll need to modify the code.
+The 28BYJ-48 ULN2003 has 2048 steps per revolution and that value is baked into the firmware. If you're using this for a different stepper
+motor (NEMA17 has 200 steps) you'll need to modify the code.
 
 Microstepping is not supported for the same reasons Nikodem outlines.
 
