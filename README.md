@@ -108,11 +108,19 @@ Here are two options that should work depending on how you want your blinds moun
 
 ## Prior Art
 
-### Martin Engström Feb 1, 2017
+### Niklas Olofsson Sep 4, 2016
+
+https://www.youtube.com/watch?v=cdtB0BqNfGk
+
+Niklas' blind project revolves around a Raspberry Pi and commercial 12v roller blind motors sourced from https://m.nu. Each TUPPLUR blind needs one of the 69.90 € motors. The project pages on Niklas' website are no longer available.
+
+If you can afford commercial 12v roller blind motors, then this is potentially a good solution. I have no doubt that a $70 motor will have more than enough torque to run the largest TUPPLUR blind. But for installations requiring many blinds, this is an expensive option.
+
+### Martin Engström Jan 26, 2017
 
 https://www.instructables.com/id/Motorized-WiFi-IKEA-Roller-Blind/
 
-Martin's project is an excellent guide and I prefer his solution over others automated blind systems I've seen. 
+Martin's project is an excellent guide and I prefer his solution over other automated blind systems I've seen. The combination of ESP8266, 28BYJ-48 stepper, and 3D printed brackets make this build very affordable.
 
 Martin used Lua firmware that he wrote for his NodeMCU (ESP8266). His manual calibration method with a single button (long/short presses) is nice, but I didn't like the form factor of the extra box to house the switch. I also wanted MQTT calibration. And I wanted "native" HomeAssistant MQTT Cover Platform support.
 
@@ -120,4 +128,10 @@ Martin used Lua firmware that he wrote for his NodeMCU (ESP8266). His manual cal
 
 https://www.youtube.com/watch?v=Dka4of30YOY
 
-Peter's mounting hardware allows for inside window frame mounting and introduces a small gear reduction to help overcome the problems with larger blinds.
+Peter's mounting hardware allows for inside window frame mounting and introduces a gear reduction to help overcome the problems with larger blinds. 
+
+Peter also provides his own firmware with an onboard web UI to operate the blinds. The firmware includes OTA updates and JSON configurations saved to SPIFFS. All in all, very nice. In a lot of ways Peter's current project is better than this one. 
+
+<img src="https://user-images.githubusercontent.com/2181965/31534387-00936ba2-aff7-11e7-8064-bc02d2b2d767.jpg" width="300px" />
+
+Peter's github repo has been archived and he doesn't seem to have plans to do future improvements. Also, I wanted an out of the box HomeAssistant solution and preferably Tasmota firmware with a blind Template.
