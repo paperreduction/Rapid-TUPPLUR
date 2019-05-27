@@ -78,12 +78,12 @@ Here are two options that should work depending on how you want your blinds moun
  2. Compile and flash to your ESP8266
  3. Screw everything together and hang the blind on the wall.
  4. Configure the blind:
-    a. With power off, manually pull your blind all the way down and count the number of motor rotations needed to get to the bottom. See Install Tip above.
-    b. Power up your hardware
-    c. Send MQTT message to `shade1/set_travel` with a payload of the number of rotations (eg `24.3`)
-    d. Send MQTT message to `shade1/set_current_position` with a payload of `100`
-    e. Retract the shade through HomeAssistant or by sending message to `shade1/set` of `OPEN`.
-    f. Repeat: a-e while fine tunning the number of rotations in c until the blind retracts as desired. These settings are stored to flash so future power cycles will retain the configuration.
+    1. With power off, manually pull your blind all the way down and count the number of motor rotations needed to get to the bottom. See Install Tip above.
+    2. Power up your hardware
+    3. Send MQTT message to `shade1/set_travel` with a payload of the number of rotations (eg `24.3`)
+    4. Send MQTT message to `shade1/set_current_position` with a payload of `100`
+    5. Retract the shade through HomeAssistant or by sending message to `shade1/set` of `OPEN`.
+    6. Repeat: 1-5 while fine tunning the number of rotations in 3 until the blind retracts as desired. These settings are stored to flash so future power cycles will retain the configuration.
 
 ### MQTT Topics
 
