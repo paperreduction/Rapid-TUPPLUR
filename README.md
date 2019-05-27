@@ -114,13 +114,18 @@ https://www.youtube.com/watch?v=cdtB0BqNfGk
 
 Niklas' blind project revolves around a Raspberry Pi and commercial 12v roller blind motors sourced from https://m.nu. Each TUPPLUR blind needs one of the 69.90 € motors. The project pages on Niklas' website are no longer available.
 
-If you can afford commercial 12v roller blind motors, then this is potentially a good solution. I have no doubt that a $70 motor will have more than enough torque to run the largest TUPPLUR blind. But for installations requiring many blinds, this is an expensive option.
+<img src="https://images.m.nu/data/product/1076f860/m_punkt_nu_tubmotor_12v_for_20mm_ror.jpg" width="300px" />
+https://www.m.nu/tubmotor-12v-for-20mm-ror
+
+If you can afford commercial 12v roller blind motors then this is potentially a good solution. I have no doubt that a $70 motor will have more than enough torque to run the largest TUPPLUR blind. But for installations requiring many blinds, this is an expensive option.
+
+Also, since the original project pages are no longer available there is not control code available.
 
 ### Martin Engström Jan 26, 2017
 
 https://www.instructables.com/id/Motorized-WiFi-IKEA-Roller-Blind/
 
-Martin's project is an excellent guide and I prefer his solution over other automated blind systems I've seen. The combination of ESP8266, 28BYJ-48 stepper, and 3D printed brackets make this build very affordable.
+Martin's project is an excellent guide and I prefer his solution over other automated blind systems I've seen. The combination of ESP8266, 28BYJ-48 stepper, and 3D printed brackets make this build very affordable. And I get the impression that many Ikea roller blind projects that have come since Martin's project have been inspired by it.
 
 Martin used Lua firmware that he wrote for his NodeMCU (ESP8266). His manual calibration method with a single button (long/short presses) is nice, but I didn't like the form factor of the extra box to house the switch. I also wanted MQTT calibration. And I wanted "native" HomeAssistant MQTT Cover Platform support.
 
@@ -128,7 +133,7 @@ Martin used Lua firmware that he wrote for his NodeMCU (ESP8266). His manual cal
 
 https://www.youtube.com/watch?v=Dka4of30YOY
 
-Peter's mounting hardware allows for inside window frame mounting and introduces a gear reduction to help overcome the problems with larger blinds. 
+Peter's project was inspired by Martin Engström. Peter's mounting hardware allows for inside window frame mounting and introduces a gear reduction to help overcome the problems with larger blinds. 
 
 Peter also provides his own firmware with an onboard web UI to operate the blinds. The firmware includes OTA updates and JSON configurations saved to SPIFFS. All in all, very nice. In a lot of ways Peter's current project is better than this one. 
 
