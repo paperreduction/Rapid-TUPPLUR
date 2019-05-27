@@ -40,7 +40,7 @@ You'll need to build a Rapid TUPPLUR before you can add it to HomeAssistant.
 Besides the Ikea TUPPLUR Roller Blind you'll need an ESP8266, like a NodeMCU, and a 28BYJ-48 stepper motor with ULN2003 driver. You'll also want to select a mounting bracket.
 
 <img src="https://images-na.ssl-images-amazon.com/images/I/7115Yl4jXQL._SL1001_.jpg" width="300px" />
-https://www.amazon.com/gp/product/B072M57XQ2/
+https://www.amazon.com/gp/product/B072M57XQ2/  
 
 
 Nikodem Bartnik created an excellent overview video that explains how to work with this stepper motor:
@@ -52,7 +52,7 @@ motor (NEMA17 has 200 steps) you'll need to modify the code.
 
 Microstepping is not supported for the same reasons Nikodem outlines.
 
-*IMPORTANT BLIND SIZE NOTE:* TUPPLUR come in widths from 23" to 48". The 28BYJ-48 ULN2003 stepper motor/driver combo is one of the cheapest you can find. But it has limited torque (functionally only 300 g/cm). Retracting the blind from a fully closed position can be a problem for the larger blinds. The 28BYJ-48 comes in a 5v and 12v version. The 5v version should be able to operate blinds up to 30", however, the 12v version is advisable for larger blinds. And the 48" blind might not work at all. Though Samir Sogay seems to have gotten his to work with some effort: https://youtu.be/7t00NgeBgO8?t=120. 
+**IMPORTANT BLIND SIZE NOTE:** TUPPLUR come in widths from 23" to 48". The 28BYJ-48 ULN2003 stepper motor/driver combo is one of the cheapest you can find. But it has limited torque (functionally only 300 g/cm). Retracting the blind from a fully closed position can be a problem for the larger blinds. The 28BYJ-48 comes in a 5v and 12v version. The 5v version should be able to operate blinds up to 30", however, the 12v version is advisable for larger blinds. And the 48" blind might not work at all. Though Samir Sogay seems to have gotten his to work with some effort: https://youtu.be/7t00NgeBgO8?t=120. 
 
 ### ESP8266/NodeMCU
 
@@ -68,9 +68,9 @@ Here are two options that should work depending on how you want your blinds moun
 * Outside mount (w/ gear reduction): https://www.thingiverse.com/thing:2530155
 * Outside mount: https://www.thingiverse.com/thing:2065722
 
-*Gear Reduction*: The inside/outside mounts with gear reduction includes a 10:19 gear reduction to help increase the output torque of the 28BYJ-48. If you're using one of the larger sized blinds these options are advisable. The reduction almost doubles the torque but also reduces the operation speed by half.
+**Gear Reduction**: The inside/outside mounts with gear reduction includes a 10:19 gear reduction to help increase the output torque of the 28BYJ-48. If you're using one of the larger sized blinds these options are advisable. The reduction almost doubles the torque but also reduces the operation speed by half.
 
-*Install Tip*: If you are using a bracket with a gear reduction, before installing the motor you want to mark one of the teeth (that you can see) that is attached to the motor (the smaller gear). This will let you count motor rotations later.
+**Install Tip**: If you are using a bracket with a gear reduction, before installing the motor you want to mark one of the teeth (that you can see) that is attached to the motor (the smaller gear). This will let you count motor rotations later.
 
 ## Blind Setup
 
