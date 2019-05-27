@@ -37,13 +37,15 @@ At some point I hope to migrate this firmware to a Tasmota template.
 
 You'll need to build a Rapid TUPPLUR before you can add it to HomeAssistant.
 
-Besides the Ikea TUPPLUR Roller Blind you'll need an ESP8266, like a NodeMCU, and a s28BYJ-48 stepper motor with ULN2003 driver. You'll also want to select a mounting bracket.
+Besides the Ikea TUPPLUR Roller Blind you'll need an ESP8266, like a NodeMCU, and a 28BYJ-48 stepper motor with ULN2003 driver. You'll also want to select a mounting bracket.
 
 <img src="https://images-na.ssl-images-amazon.com/images/I/7115Yl4jXQL._SL1001_.jpg" width="300px" />
 https://www.amazon.com/gp/product/B072M57XQ2/
 
+
 Nikodem Bartnik created an excellent overview video that explains how to work with this stepper motor:
 https://www.youtube.com/watch?v=avrdDZD7qEQ
+
 
 The 28BYJ-48 ULN2003 has 2048 steps per revolution and that value is baked into the firmware. If you're using this for a different stepper
 motor (NEMA17 has 200 steps) you'll need to modify the code.
