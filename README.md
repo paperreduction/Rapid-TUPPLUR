@@ -35,6 +35,8 @@ At some point I hope to migrate this firmware to a Tasmota template.
 
 ## Hardware Overview
 
+You'll need to build a Rapid TUPPLUR before you can add it to HomeAssistant.
+
 Besides the Ikea TUPPLUR Roller Blind you'll need an ESP8266, like a NodeMCU, and a s28BYJ-48 stepper motor with ULN2003 driver. You'll also want to select a mounting bracket.
 
 <img src="https://images-na.ssl-images-amazon.com/images/I/7115Yl4jXQL._SL1001_.jpg" width="300px" />
@@ -56,6 +58,8 @@ The ULN2003 needs *four output pins* to control the stepping plus GND and 5-12 V
 
 ### Mounting Brackets
 
+<img src="https://cdn.thingiverse.com/renders/66/95/c2/86/1c/45161d5cdbf2e0be0c94268e707b2872_preview_featured.jpg" width="200px" />
+
 Here are two options that should work depending on how you want your blinds mounted.
 
 * Inside mount (w/ gear reduction): https://www.thingiverse.com/thing:2392856
@@ -63,6 +67,42 @@ Here are two options that should work depending on how you want your blinds moun
 * Outside mount: https://www.thingiverse.com/thing:2065722
 
 *Gear Reduction*: The inside/outside mounts with gear reduction includes a 10:19 gear reduction to help increase the output torque of the 28BYJ-48. If you're using one of the larger sized blinds these options are advisable. The reduction almost doubles the torque but also reduces the operation speed by half.
+
+*Install Tip*: If you are using a bracket with a gear reduction, before installing the motor you want to mark one of the teeth (that you can see) that is attached to the motor (the smaller gear). This will let you count motor rotations later.
+
+## Blind Setup
+
+ 1. Clone this repo and configure your MQTT and Wifi details in RapidTupplur.
+ 2. Compile and flash to your ESP8266
+ 3. Screw everything together and hang the blind on the wall.
+ 4. Configure the blind:
+   a. With power off, manually pull your blind all the way down and count the number of motor rotations needed to get to the bottom. See Install Tip above.
+   b. Power up your hardware
+   c. Send MQTT message to `shade1/set_travel` with a payload of the number of rotations (eg `24.3`)
+   d. Send MQTT message to `shade1/set_current_position` with a payload of `100`
+   e. Retract the shade through HomeAssistant or by sending message to `shade1/set` of `OPEN`.
+   f. Repeat: a-e while fine tunning the number of rotations in c until the blind retracts as desired. These settings are stored to flash so future power cycles will retain the configuration.
+
+### MQTT Topics
+
+ * shade1/set: OPEN, CLOSE, STOP
+ * shade1/set_position: int 0 - 100. 0 is fully open, 100 is fully closed.
+ * shade1/position: int 0 - 100. Current position of the blind.
+ * shade1/availability: online, offline
+ * shade1/set_travel: float 0.0 - 500.0. This value calibrates the blind and sets the # of motor rotations needed to fully open/close the blind.
+ * shade1/set_set_current_position: int 0 - 100. If the blind is out of sync (thinks the blind is down but it's up) you can use this to force a new current position.
+
+## Home Assistant Integration
+
+ 1. Add MQTT Cover yaml (above) to your configuration.yaml
+ 2. Restart HomeAssistant
+ 3. Add a cool automation!
+ 
+ Automations to try-
+ 
+ 1. Sun rise/set (blinds down at sun set and up at sun rise)
+ 2. Plex Play (blinds down when plex is playing)
+ 3. Hot Day (blinds down if outside temps >92deg)
 
 ## Prior Art
 
@@ -78,22 +118,4 @@ Martin used Lua firmware that he wrote for his NodeMCU (ESP8266). His manual cal
 
 https://www.youtube.com/watch?v=Dka4of30YOY
 
-Peter's mounting hardware allows for inside window frame mounting and introduces a small gear reduction to help overcome the problems with larger blinds. 20:38
-
-## Blind Setup
-
- 1. Configure your MQTT and Wifi details in the firmware
- 2. Compile and flash to your ESP8266
- 3. Configure the device
-   1. With power off, manually pull your blind all the way down and count the number of rotations needed to get to the bottom.
-   2. Power up your hardware and open the device configuration
-   3. Enter the total number of rotations required to go from fully closed to fully open. **NOTE:** There are no limit switches included in this template so I recommend using a value that's 1/2 turn less than the actual.
-   4. Check the calibrate box and adjust the slider to 100%
-   5. Uncheck the calibrate box and adjust the slider to all the way up.
-   6. This will run the stepper motor to pull the blind up. It should stop short about 1/2 turn.
-   7. Repeat: 1-6 with fine tuning the number of rotations in #3 until the blind retracts as desired.
- 
-## Home Assistant Integration
-
- 1. Add device as a shutter
-
+Peter's mounting hardware allows for inside window frame mounting and introduces a small gear reduction to help overcome the problems with larger blinds.
