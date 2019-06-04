@@ -6,6 +6,8 @@
 
 This project is yet another TUPPLUR Roller Blind automation project. It's based on an ESP8266 which utilizes MQTT for communication with HomeAssistant. It supports command, postion, availability, and set_position topics with the default payloads used by the MQTT Cover Platform. There are also a few configuration/calibration topics (details further down).
 
+My goal is to integrate all of this into Tasmota and to have as close to a plug-n-play solution as possible.
+
 HomeAssistant configuration to operate Rapid TUPPLUR: 
 
 ```yaml
